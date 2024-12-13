@@ -1,17 +1,18 @@
 {
-  "name": "backend",
+  "name": "art-gallery-backend",
   "version": "1.0.0",
-  "description": "This is the backend code for our art website",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon -e '*",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
-  "author": "Zulykath Lucero",
-  "license": "ISC",
   "dependencies": {
-    "@supabase/supabase-js": "^2.47.6",
-    "express": "^4.21.2",
-    "nodemon": "^3.1.7"
+    "@supabase/supabase-js": "^2.x.x",
+    "cors": "^2.8.5",
+    "dotenv": "^16.x.x",
+    "express": "^4.x.x"
+  },
+  "devDependencies": {
+    "nodemon": "^2.x.x"
   }
 }
