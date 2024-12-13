@@ -4,12 +4,13 @@
   "description": "This is the backend code for our art website",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon -e '*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Zulykath Lucero",
   "license": "ISC",
   "dependencies": {
+    "@supabase/supabase-js": "^2.47.6",
     "express": "^4.21.2",
     "nodemon": "^3.1.7"
   }
