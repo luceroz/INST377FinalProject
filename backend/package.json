@@ -4,7 +4,7 @@
   "description": "This is the backend code for our art website",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -e '*",
+    "start": "nodemon -e '*'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Zulykath Lucero",
