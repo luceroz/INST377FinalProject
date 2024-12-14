@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Help from "./pages/Help";
 import Search from "./pages/Search";
 import NavBar from "./components/NavBar";
+import Shop from "./pages/Shop";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path='/about' element={<About />} />
         <Route exact path='/help' element={<Help />} />
         <Route exact path='/search' element={<Search />} />
+        <Route exact path='/shop' element={<Shop />} />
       </Routes>
     </Router>
   );

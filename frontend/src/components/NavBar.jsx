@@ -23,6 +23,9 @@ function NavBar() {
           <li>
             <Link to='/search'>Search</Link>
           </li>
+          <li>
+            <Link to='/shop'>Shop</Link>
+          </li>
         </ul>
       </div>
       <div className='navbar-right'>
