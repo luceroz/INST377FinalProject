@@ -6,10 +6,10 @@ function Shop() {
   const [loading, setLoading] = useState(true);
   const [newListing, setNewListing] = useState({
     title: "",
-    artist: "",
+    artist_name: "",
     price: "",
     description: "",
-    image_url: "",
+    image: "",
   });
 
   // get all art pieces
@@ -52,10 +52,10 @@ function Shop() {
       // reset form and refresh list
       setNewListing({
         title: "",
-        artist: "",
+        artist_name: "",
         price: "",
         description: "",
-        image_url: "",
+        image: "",
       });
       fetchListings();
       alert("Art piece listed successfully!");
@@ -91,8 +91,8 @@ function Shop() {
             <input
               type='text'
               id='artist'
-              name='artist'
-              value={newListing.artist}
+              name='artist_name'
+              value={newListing.artist_name}
               onChange={handleInputChange}
               required
             />
@@ -126,8 +126,8 @@ function Shop() {
             <input
               type='url'
               id='image_url'
-              name='image_url'
-              value={newListing.image_url}
+              name='image'
+              value={newListing.image}
               onChange={handleInputChange}
               required
             />
