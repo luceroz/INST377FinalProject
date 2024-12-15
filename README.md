@@ -25,16 +25,24 @@ An interactive web application that combines art collections from multiple prest
 
 ### Setup Steps
 1. Clone the repository
-2. Install dependencies:
-```
+2. Install dependencies with 'npm install'
+3. Start the dev server with 'npm start' in the frontend directory
 
+### Tests
+- Tests are listed in test files
+- App.test.js and setupTests.js
+- Run App.test.js with 'npm test'
+
+```
 ### API Endpoints
 - GET /api/artworks - Retrieves artwork data
 - POST /api/feedback - Submits user feedback
 - GET /external/art - Fetches data from external API
 
 ### Known Bugs
-- [List any known issues]
+- None currently known. Please contact contributors if you happen to find any.
 
 ### Future Development
-- [Planned features and improvements]
+- More features for sellers like creating a profile
+- UX and QOL improvements
+- Integration with more APIs for an extended database
