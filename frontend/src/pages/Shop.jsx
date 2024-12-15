@@ -1,84 +1,74 @@
-import React, { useState, useEffect } from 'react';
-import { supabase } from '../config/supabase';
-
+import React, { useState, useEffect } from "react";
+import { supabase } from "../config/supabase";
 
 function Shop() {
   const [listings, setListings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [newListing, setNewListing] = useState({
-    title: '',
-    artist: '',
-    price: '',
-    description: '',
-    image_url: ''
+    title: "",
+    artist: "",
+    price: "",
+    description: "",
+    image_url: "",
   });
-
 
   // get all art pieces
   useEffect(() => {
     fetchListings();
   }, []);
 
-
   const fetchListings = async () => {
     try {
-      const { data, error } = await supabase
-        .from('listings')
-        .select('*');
-     
+      const { data, error } = await supabase.from("listings").select("*");
+
       if (error) throw error;
       setListings(data);
     } catch (error) {
-      console.error('Error fetching listings:', error);
+      console.error("Error fetching listings:", error);
     } finally {
       setLoading(false);
     }
   };
 
-
   // handle input change
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setNewListing(prev => ({
+    setNewListing((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
-
 
   // submit new art piece
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const { data, error } = await supabase
-        .from('listings')
+        .from("listings")
         .insert([newListing]);
 
-
       if (error) throw error;
-     
+
       // reset form and refresh list
       setNewListing({
-        title: '',
-        artist: '',
-        price: '',
-        description: '',
-        image_url: ''
+        title: "",
+        artist: "",
+        price: "",
+        description: "",
+        image_url: "",
       });
       fetchListings();
-      alert('Art piece listed successfully!');
+      alert("Art piece listed successfully!");
     } catch (error) {
-      console.error('Error submitting listing:', error);
-      alert('Failed to submit listing');
+      console.error("Error submitting listing:", error);
+      alert("Failed to submit listing");
     }
   };
-
 
   return (
     <div className='shop-container'>
       <h2>Shop for Art</h2>
       <p>Support artists by purchasing their masterpieces.</p>
-
 
       {/* submit new art piece form */}
       <div className='submit-artwork-form'>
@@ -96,7 +86,6 @@ function Shop() {
             />
           </div>
 
-
           <div className='form-group'>
             <label htmlFor='artist'>Artist Name</label>
             <input
@@ -108,7 +97,6 @@ function Shop() {
               required
             />
           </div>
-
 
           <div className='form-group'>
             <label htmlFor='price'>Price ($)</label>
@@ -122,7 +110,6 @@ function Shop() {
             />
           </div>
 
-
           <div className='form-group'>
             <label htmlFor='description'>Description</label>
             <textarea
@@ -133,7 +120,6 @@ function Shop() {
               required
             />
           </div>
-
 
           <div className='form-group'>
             <label htmlFor='image_url'>Image URL</label>
@@ -147,13 +133,11 @@ function Shop() {
             />
           </div>
 
-
           <button type='submit' className='submit-button'>
             List Artwork
           </button>
         </form>
       </div>
-
 
       {/* show art pieces */}
       <div className='artworks-grid'>
@@ -162,20 +146,18 @@ function Shop() {
         ) : listings.length === 0 ? (
           <p>No artworks listed yet.</p>
         ) : (
-          listings.map(listing => (
+          listings.map((listing) => (
             <div key={listing.id} className='artwork-card'>
               <img
-                src={listing.image_url}
+                src={listing.image}
                 alt={listing.title}
                 className='artwork-image'
               />
               <h3>{listing.title}</h3>
-              <p>By {listing.artist}</p>
+              <p>By {listing.artist_name}</p>
               <p className='price'>${listing.price}</p>
               <p className='description'>{listing.description}</p>
-              <button className='buy-button'>
-                Contact Seller
-              </button>
+              <button className='buy-button'>Contact Seller</button>
             </div>
           ))
         )}
@@ -183,6 +165,5 @@ function Shop() {
     </div>
   );
 }
-
 
 export default Shop;
