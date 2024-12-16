@@ -51,6 +51,7 @@ function About() {
           <li>Advanced search capabilities</li>
           <li>Detailed artwork information and history</li>
           <li>Visual exploration of art pieces</li>
+          <li>Shop from a wide selction of art pieces</li>
         </ul>
       </motion.section>
 
