@@ -1,13 +1,14 @@
 # Art Gallery Visualization Project
 
 ## Description
-An interactive web application that combines art collections from multiple prestigious museums, allowing users to explore artworks through an intuitive interface. The platform integrates data from the Art Institute of Chicago and The Metropolitan Museum of Art APIs.
+An interactive web application that combines art collections from multiple prestigious museums, allowing users to explore and shop for various artworks through an intuitive interface. The platform integrates data from the Art Institute of Chicago and The Metropolitan Museum of Art APIs.
 
 ## Features
 - Real-time artwork search across museum collections
 - Interactive data visualizations using Chart.js
 - Responsive design with smooth animations
 - Contact form for user inquiries
+- Shop page where users can buy and sell art pieces
 
 ## Target Browsers
 - Desktop: Chrome, Firefox, Safari, Edge (latest versions)
